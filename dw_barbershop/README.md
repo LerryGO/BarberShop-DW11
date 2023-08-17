@@ -1,6 +1,9 @@
 # dw_barbershop
 
-A new Flutter project.
+## Aplicativo de gerenciamento de uma barbearia, com acessos a ADMIN, COLABORADOR  e CLIENTE
+
+Projeto feito em flutter na semana DartWeek 11 com o professor Rodrigo Rahman
+Neste projeto utiliza-se o Riverpod como gerência de estado.
 
 ## Getting Started
 
