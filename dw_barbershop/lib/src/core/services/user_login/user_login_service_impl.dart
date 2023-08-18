@@ -22,16 +22,18 @@ class UserLoginServiceImpl implements UserLoginService {
         final sp = await SharedPreferences.getInstance();
         sp.setString(LocalStorageKeys.accessToken, accessToken);
         return Success(nil);
-
       case Failure(:final exception):
-        return switch (exception) {
-          AuthError() => Failure(
-              ServiceException(message: 'Erro ao realizar login'),
-            ),
-          AuthUnauthorizedException() => Failure(
-              ServiceException(message: 'Login ou senha inválidos'),
-            ),
-        };
+        switch (exception) {
+          case AuthError():
+            return Failure(
+                ServiceException(message: 'Erro ao realizar Login!'));
+          case AuthUnauthorizedException():
+            return Failure(
+                ServiceException(message: 'Login ou senha inválidos'));
+          default:
+            return Failure(
+                ServiceException(message: 'Erro ao realizar Login!'));
+        }
     }
   }
 }
