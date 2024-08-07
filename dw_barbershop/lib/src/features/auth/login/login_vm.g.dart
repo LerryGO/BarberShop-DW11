@@ -6,7 +6,7 @@ part of 'login_vm.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$loginVmHash() => r'8bcf6f1cd6573263f39e80270c59db888aa37983';
+String _$loginVmHash() => r'019b6c8036bb0e2bfecb5c561c2bf561b07f3456';
 
 /// See also [LoginVm].
 @ProviderFor(LoginVm)
@@ -22,4 +22,4 @@ final loginVmProvider =
 
 typedef _$LoginVm = AutoDisposeNotifier<LoginState>;
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

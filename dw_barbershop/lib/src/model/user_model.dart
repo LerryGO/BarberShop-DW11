@@ -1,5 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-
 sealed class UserModel {
   final int id;
   final String name;
@@ -12,6 +10,14 @@ sealed class UserModel {
     required this.email,
     this.avatar,
   });
+
+  factory UserModel.fromMap(Map<String, dynamic> json) {
+    return switch (json['profile']) {
+      'ADM' => UserModelADM.fromMap(json),
+      'EMPLOYEE' => UserModelEmployee.fromMap(json),
+      _ => throw ArgumentError('User profile not found')
+    };
+  }
 }
 
 class UserModelADM extends UserModel {
@@ -62,15 +68,15 @@ class UserModelEmployee extends UserModel {
     super.avatar,
   });
 
-  factory UserModelEmployee.fromMap(Map<String,dynamic> json){
-    return switch(json){
+  factory UserModelEmployee.fromMap(Map<String, dynamic> json) {
+    return switch (json) {
       {
         'id': final int id,
         'name': final String name,
         'email': final String email,
         'barbershop_id': final int barbershopId,
         'work_days': final List workDays,
-        'work_hours' : final List workHours,
+        'work_hours': final List workHours,
       } =>
         UserModelEmployee(
           id: id,
