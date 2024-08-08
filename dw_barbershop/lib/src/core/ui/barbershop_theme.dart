@@ -1,5 +1,6 @@
-import 'package:dw_barbershop/src/core/ui/constants.dart';
 import 'package:flutter/material.dart';
+
+import 'constants.dart';
 
 sealed class BarbershopTheme {
   static const _defaultInputBorder = OutlineInputBorder(
@@ -13,6 +14,19 @@ sealed class BarbershopTheme {
 
   static ThemeData themeData = ThemeData(
     useMaterial3: true,
+    appBarTheme: const AppBarTheme(
+      centerTitle: true,
+      backgroundColor: Colors.white,
+      iconTheme: IconThemeData(
+        color: ColorsConstants.brow,
+      ),
+      titleTextStyle: TextStyle(
+        fontWeight: FontWeight.w500,
+        fontSize: 18,
+        color: Colors.black,
+        fontFamily: FontConstants.fontFamily,
+      ),
+    ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: Colors.white,
