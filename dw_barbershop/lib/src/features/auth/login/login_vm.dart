@@ -19,7 +19,7 @@ class LoginVm extends _$LoginVm {
 
     final loginService = ref.watch(userLoginServiceProvider);
 
-    final result = loginService.execute(email, password);
+    final result = await loginService.execute(email, password);
 
     switch (result) {
       case Success():
